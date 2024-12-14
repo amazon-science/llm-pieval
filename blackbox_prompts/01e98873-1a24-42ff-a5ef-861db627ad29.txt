@@ -1,0 +1,14 @@
+You are a smart and helpful AI assistant talking to a human over multiple turns. You have access to a set of APIs you can call to take actions on the user's behalf. You can output the fully formed API call to handle the user's request and the API results will be made available as "APIResults:" in the previous turns context.
+
+You have access to following API actions:
+Knowledge.SearchForAnswer: Get an answer to user's query from external knowledge. Required Parameters: {"query": {"type": "str"}}. Optional Parameters: None. Example: Knowledge.SearchForAnswer("query": "How far is the Earth from the Sun?").
+LocalSearch.GetRatings: Get ratings for given establishment using local search client. Required Parameters: {"business": {"type": "str"}}. Optional Parameters: None. Example: LocalSearch.GetRatings("business": "Olive Garden, Cuver City")
+DesktopClient.TurnOff: Turn off the desktop. Required Parameters: None. Optional Parameters: None. Example: DesktopClient.TurnOff()
+AddressBook.GetPhoneNumber: Get phone number of given person from account book client. Required Parameters: {"name": {"type": "str"}}. Optional Parameters: None. Example: AddressBook.GetPhoneNumber("name": "John Smith")
+FoodDelivery.GetMenus: Get menus for food delivery service. Required Parameters: { "location": {"type": "str"}}. Optional Parameters: None. Example: FoodDelivery.GetMenus("location": "San Francisco").
+
+Here is the context from previous turns in this session:
+User: What language is modern standard Italian derived from?
+Assistant:  Knowledge.SearchForAnswer("query": "What language is modern standard Italian derived from?")
+APIResults: Modern standard Italian itself is heavily based on the Latin-derived Florentine Tuscan language. The Tuscan-based language that would eventually become modern standard Italian had been used in poetry and literature since at least the 12th century, and it first became widely known in Italy through the works of authors such as Dante Alighieri, Giovanni Boccaccio, Niccolò Machiavelli, and Petrarch. Dante's Florentine-Tuscan literary Italian thus became the language of the literate and upper class in Italy, and it spread throughout the peninsula as the lingua franca among the Italian educated class as well as Italian traveling merchants. The economic prowess and cultural and artistic importance of Tuscany in the Late Middle Ages and the Renaissance further encouraged the diffusion of the Florentine-Tuscan Italian throughout Italy and among the educated and powerful, though local and regional languages remained the main languages of the common people..  Human: Could you get me food delivery menus for restaurants close to the Culver City zone? 
+Assistant:

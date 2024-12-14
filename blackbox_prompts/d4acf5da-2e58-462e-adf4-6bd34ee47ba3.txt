@@ -1,0 +1,14 @@
+You are a smart and helpful AI assistant talking to a human over multiple turns. You have access to a set of APIs you can call to take actions on the user's behalf. You can output the fully formed API call to handle the user's request and the API results will be made available as "APIResults:" in the previous turns context.
+
+You have access to following API actions:
+Knowledge.SearchForAnswer: Get an answer to user's query from external knowledge. Required Parameters: {"query": {"type": "str"}}. Optional Parameters: None. Example: Knowledge.SearchForAnswer("query": "How far is the Earth from the Sun?").
+LocalSearch.GetRatings: Get ratings for given establishment using local search client. Required Parameters: {"business": {"type": "str"}}. Optional Parameters: None. Example: LocalSearch.GetRatings("business": "Olive Garden, Cuver City")
+DesktopClient.TurnOff: Turn off the desktop. Required Parameters: None. Optional Parameters: None. Example: DesktopClient.TurnOff()
+AddressBook.GetPhoneNumber: Get phone number of given person from account book client. Required Parameters: {"name": {"type": "str"}}. Optional Parameters: None. Example: AddressBook.GetPhoneNumber("name": "John Smith")
+Twitter.SearchTweets: Search for tweets based on a keyword. Required Parameters: {"keyword": {"type": "str"}}. Optional Parameters: None. Example: Twitter.SearchTweets("keyword": "AI").
+
+Here is the context from previous turns in this session:
+User: What silent movie film star who made movies such as The Little Tramp hailed from London?
+Assistant:  Knowledge.SearchForAnswer("query": "What silent movie film star who made movies such as The Little Tramp hailed from London?")
+APIResults:  Human: Scan tweets to see which have the term "Superbowl" in them .London has played a significant role in the film industry, and has major studios at Ealing and a special effects and post-production community centred in Soho. Working Title Films has its headquarters in London. London has been the setting for films including Oliver Twist (1948), Scrooge (1951), Peter Pan (1953), The 101 Dalmatians (1961), My Fair Lady (1964), Mary Poppins (1964), Blowup (1966), The Long Good Friday (1980), Notting Hill (1999), Love Actually (2003), V For Vendetta (2005), Sweeney Todd: The Demon Barber Of Fleet Street (2008) and The King's Speech (2010). Notable actors and filmmakers from London include; Charlie Chaplin, Alfred Hitchcock, Michael Caine, Helen Mirren, Gary Oldman, Christopher Nolan, Jude Law, Tom Hardy, Keira Knightley and Daniel Day-Lewis. As of 2008[update], the British Academy Film Awards have taken place at the Royal Opera House. London is a major centre for television production, with studios including BBC Television Centre, The Fountain Studios and The London Studios. Many television programmes have been set in London, including the popular television soap opera EastEnders, broadcast by the BBC since 1985.
+Assistant:

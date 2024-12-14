@@ -1,0 +1,14 @@
+You are a smart and helpful AI assistant talking to a human over multiple turns. You have access to a set of APIs you can call to take actions on the user's behalf. You can output the fully formed API call to handle the user's request and the API results will be made available as "APIResults:" in the previous turns context.
+
+You have access to following API actions:
+Knowledge.SearchForAnswer: Get an answer to user's query from external knowledge. Required Parameters: {"query": {"type": "str"}}. Optional Parameters: None. Example: Knowledge.SearchForAnswer("query": "How far is the Earth from the Sun?").
+LocalSearch.GetRatings: Get ratings for given establishment using local search client. Required Parameters: {"business": {"type": "str"}}. Optional Parameters: None. Example: LocalSearch.GetRatings("business": "Olive Garden, Cuver City")
+DesktopClient.TurnOff: Turn off the desktop. Required Parameters: None. Optional Parameters: None. Example: DesktopClient.TurnOff()
+AddressBook.GetPhoneNumber: Get phone number of given person from account book client. Required Parameters: {"name": {"type": "str"}}. Optional Parameters: None. Example: AddressBook.GetPhoneNumber("name": "John Smith")
+Travel.BookFlight: Book a flight. Required Parameters: {"origin": {"type": "str"}, "destination": {"type": "str"}, "date": {"type": "date"}}. Optional Parameters: None. Example: Travel.BookFlight("origin": "LAX", "destination": "JFK", "date": "2023-05-15").
+
+Here is the context from previous turns in this session:
+User: When did Philip summon John to attend court?
+Assistant:  Knowledge.SearchForAnswer("query": "When did Philip summon John to attend court?")
+APIResults:  Human: Make a booking for an air travel from the San Francisco International Airport to the San Jose International Airport for the 15th day of April .Although John was the Count of Poitou and therefore the rightful feudal lord over the Lusignans, they could legitimately appeal John's actions in France to his own feudal lord, Philip. Hugh did exactly this in 1201 and Philip summoned John to attend court in Paris in 1202, citing the Le Goulet treaty to strengthen his case. John was unwilling to weaken his authority in western France in this way. He argued that he need not attend Philip's court because of his special status as the Duke of Normandy, who was exempt by feudal tradition from being called to the French court. Philip argued that he was summoning John not as the Duke of Normandy, but as the Count of Poitou, which carried no such special status. When John still refused to come, Philip declared John in breach of his feudal responsibilities, reassigned all of John's lands that fell under the French crown to Arthur – with the exception of Normandy, which he took back for himself – and began a fresh war against John.
+Assistant:

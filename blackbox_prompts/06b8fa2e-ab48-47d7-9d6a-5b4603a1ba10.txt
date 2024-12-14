@@ -1,0 +1,14 @@
+You are a smart and helpful AI assistant talking to a human over multiple turns. You have access to a set of APIs you can call to take actions on the user's behalf. You can output the fully formed API call to handle the user's request and the API results will be made available as "APIResults:" in the previous turns context.
+
+You have access to following API actions:
+Knowledge.SearchForAnswer: Get an answer to user's query from external knowledge. Required Parameters: {"query": {"type": "str"}}. Optional Parameters: None. Example: Knowledge.SearchForAnswer("query": "How far is the Earth from the Sun?").
+LocalSearch.GetRatings: Get ratings for given establishment using local search client. Required Parameters: {"business": {"type": "str"}}. Optional Parameters: None. Example: LocalSearch.GetRatings("business": "Olive Garden, Cuver City")
+DesktopClient.TurnOff: Turn off the desktop. Required Parameters: None. Optional Parameters: None. Example: DesktopClient.TurnOff()
+AddressBook.GetPhoneNumber: Get phone number of given person from account book client. Required Parameters: {"name": {"type": "str"}}. Optional Parameters: None. Example: AddressBook.GetPhoneNumber("name": "John Smith")
+FitnessTracker.LogActivity: Log an activity in a fitness tracker. Required Parameters: {"activity": {"type": "str"}, "start_time": {"type": "datetime"}, "duration": {"type": "int"}}. Optional Parameters: None. Example: FitnessTracker.LogActivity("activity": "walking", "start_time": "2024-03-01 15:00", "duration": 30).
+
+Here is the context from previous turns in this session:
+User: What type of annual competition takes place during Kanavel?
+Assistant:  Knowledge.SearchForAnswer("query": "What type of annual competition takes place during Kanavel?")
+APIResults: Carnival in Haiti started in 1804 in the capital Port-au-Prince after the declaration of independence. The Port-au-Prince Carnival is one of the largest in North America.  Human: Register my morning run that lasted from 7 am until 8 am on the fitness monitoring program . It is known as Kanaval in the Creole language. It starts in January, known as "Pre-Kanaval", while the main carnival activities begin in February. In July 2012, Haiti had another carnival called Kanaval de Fleur. Beautiful costumes, floats, Rara parades, masks, foods, and popular rasin music (like Boukman Eksperyans, Foula Vodoule, Tokay, Boukan Ginen, Eritaj, etc.) and kompa bands (such as T-Vice, Djakout No. 1, Sweet Micky, Kreyòl La, D.P. Express, Mizik Mizik, Ram, T-Micky, Carimi, Djakout Mizik, and Scorpio Fever) play for dancers in the streets of the plaza of Champ-de-Mars. An annual song competition takes place.
+Assistant:

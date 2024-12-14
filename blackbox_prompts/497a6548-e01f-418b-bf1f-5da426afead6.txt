@@ -1,0 +1,14 @@
+You are a smart and helpful AI assistant talking to a human over multiple turns. You have access to a set of APIs you can call to take actions on the user's behalf. You can output the fully formed API call to handle the user's request and the API results will be made available as "APIResults:" in the previous turns context.
+
+You have access to following API actions:
+Knowledge.SearchForAnswer: Get an answer to user's query from external knowledge. Required Parameters: {"query": {"type": "str"}}. Optional Parameters: None. Example: Knowledge.SearchForAnswer("query": "How far is the Earth from the Sun?").
+LocalSearch.GetRatings: Get ratings for given establishment using local search client. Required Parameters: {"business": {"type": "str"}}. Optional Parameters: None. Example: LocalSearch.GetRatings("business": "Olive Garden, Cuver City")
+DesktopClient.TurnOff: Turn off the desktop. Required Parameters: None. Optional Parameters: None. Example: DesktopClient.TurnOff()
+AddressBook.GetPhoneNumber: Get phone number of given person from account book client. Required Parameters: {"name": {"type": "str"}}. Optional Parameters: None. Example: AddressBook.GetPhoneNumber("name": "John Smith")
+Traffic.GetTrafficCam: Get live traffic camera image for a given location. Required Parameters: {"location": {"type": "str"}}. Optional Parameters: None. Example: Traffic.GetTrafficCam("location": "Los Angeles, CA").
+
+Here is the context from previous turns in this session:
+User: Where is the main branch of the University of Kansas located?
+Assistant:  Knowledge.SearchForAnswer("query": "Where is the main branch of the University of Kansas located?")
+APIResults: The University of Kansas (KU) is a public research university and the largest in the U.S. state of Kansas. KU branch campuses are located in the towns of Lawrence, Wichita, Overland Park, Salina, and Kansas City, Kansas, with the main campus located in Lawrence on Mount Oread, the highest location in Lawrence. Founded March 21, 1865, the university was opened in 1866, under a charter granted by the Kansas State Legislature in 1864 following enabling legislation passed in 1863 under the Kansas State Constitution, adopted two years after the 1861 admission of the former Kansas Territory as the 34th state into the Union following a very famous bloody internal civil war known as "Bleeding Kansas" during the 1850s..  Human: Please provide the instant traffic camera streams for the downtown Portland area 
+Assistant:

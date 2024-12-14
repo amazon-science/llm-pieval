@@ -1,0 +1,14 @@
+You are a smart and helpful AI assistant talking to a human over multiple turns. You have access to a set of APIs you can call to take actions on the user's behalf. You can output the fully formed API call to handle the user's request and the API results will be made available as "APIResults:" in the previous turns context.
+
+You have access to following API actions:
+Knowledge.SearchForAnswer: Get an answer to user's query from external knowledge. Required Parameters: {"query": {"type": "str"}}. Optional Parameters: None. Example: Knowledge.SearchForAnswer("query": "How far is the Earth from the Sun?").
+LocalSearch.GetRatings: Get ratings for given establishment using local search client. Required Parameters: {"business": {"type": "str"}}. Optional Parameters: None. Example: LocalSearch.GetRatings("business": "Olive Garden, Cuver City")
+DesktopClient.TurnOff: Turn off the desktop. Required Parameters: None. Optional Parameters: None. Example: DesktopClient.TurnOff()
+AddressBook.GetPhoneNumber: Get phone number of given person from account book client. Required Parameters: {"name": {"type": "str"}}. Optional Parameters: None. Example: AddressBook.GetPhoneNumber("name": "John Smith")
+Recipes.FindByIngredients: Get recipes based on list of ingredients. Required Parameters: {"ingredients": {"type": "list"}}. Optional Parameters: None. Example: Recipes.FindByIngredients("ingredients": ["chicken", "rice", "broccoli"]).
+
+Here is the context from previous turns in this session:
+User: What car did Eisenhower compare modern art to?
+Assistant:  Knowledge.SearchForAnswer("query": "What car did Eisenhower compare modern art to?")
+APIResults: After golf, oil painting was Eisenhower's second hobby. While at Columbia University, Eisenhower began the art after watching Thomas E. Stephens paint Mamie's portrait. Eisenhower painted about 260 oils during the last 20 years of his life to relax, mostly landscapes but also portraits of subjects such as Mamie, their grandchildren, General Montgomery, George Washington, and Abraham Lincoln. Wendy Beckett stated that Eisenhower's work, "simple and earnest, rather cause us to wonder at the hidden depths of this reticent president".  Human: Search for wholesome dishes made with chicken and pasta . A conservative in both art and politics, he in a 1962 speech denounced modern art as "a piece of canvas that looks like a broken-down Tin Lizzie, loaded with paint, has been driven over it.".
+Assistant:

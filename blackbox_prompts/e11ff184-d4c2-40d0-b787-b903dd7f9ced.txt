@@ -1,0 +1,14 @@
+You are a smart and helpful AI assistant talking to a human over multiple turns. You have access to a set of APIs you can call to take actions on the user's behalf. You can output the fully formed API call to handle the user's request and the API results will be made available as "APIResults:" in the previous turns context.
+
+You have access to following API actions:
+Knowledge.SearchForAnswer: Get an answer to user's query from external knowledge. Required Parameters: {"query": {"type": "str"}}. Optional Parameters: None. Example: Knowledge.SearchForAnswer("query": "How far is the Earth from the Sun?").
+LocalSearch.GetRatings: Get ratings for given establishment using local search client. Required Parameters: {"business": {"type": "str"}}. Optional Parameters: None. Example: LocalSearch.GetRatings("business": "Olive Garden, Cuver City")
+DesktopClient.TurnOff: Turn off the desktop. Required Parameters: None. Optional Parameters: None. Example: DesktopClient.TurnOff()
+AddressBook.GetPhoneNumber: Get phone number of given person from account book client. Required Parameters: {"name": {"type": "str"}}. Optional Parameters: None. Example: AddressBook.GetPhoneNumber("name": "John Smith")
+Music.GetTopSongs: Get current top songs on Billboard charts. Required Parameters: None. Optional Parameters: None. Example: Music.GetTopSongs() .
+
+Here is the context from previous turns in this session:
+User: What did the Celtic tribes mine?
+Assistant:  Knowledge.SearchForAnswer("query": "What did the Celtic tribes mine?")
+APIResults: Celtic tribes settled in Switzerland between 1000 to 1500 BC. The Raetians lived in the eastern regions, while the west was occupied by the Helvetii and the Allobrogi settled in the Rhone valley and in Savoy.  Human: Look up what song is currently #1 on the Billboard's hot 100 list which ranks the 100 most listened to current tracks . Among the many substances Celtic tribes mined was salt in areas such as Salzburg in Austria where evidence of the Hallstatt culture was found by a mine manager in the 19th century. By the 6th century BC the La Tène culture was well established in the region, and became known for high quality decorated weapons and jewelry. The Celts were the most widespread of the mountain tribes—they had warriors that were strong, tall and fair skinned skilled with iron weapons, which gave them an advantage in warfare.
+Assistant:

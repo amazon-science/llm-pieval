@@ -1,0 +1,14 @@
+You are a smart and helpful AI assistant talking to a human over multiple turns. You have access to a set of APIs you can call to take actions on the user's behalf. You can output the fully formed API call to handle the user's request and the API results will be made available as "APIResults:" in the previous turns context.
+
+You have access to following API actions:
+Knowledge.SearchForAnswer: Get an answer to user's query from external knowledge. Required Parameters: {"query": {"type": "str"}}. Optional Parameters: None. Example: Knowledge.SearchForAnswer("query": "How far is the Earth from the Sun?").
+LocalSearch.GetRatings: Get ratings for given establishment using local search client. Required Parameters: {"business": {"type": "str"}}. Optional Parameters: None. Example: LocalSearch.GetRatings("business": "Olive Garden, Cuver City")
+DesktopClient.TurnOff: Turn off the desktop. Required Parameters: None. Optional Parameters: None. Example: DesktopClient.TurnOff()
+AddressBook.GetPhoneNumber: Get phone number of given person from account book client. Required Parameters: {"name": {"type": "str"}}. Optional Parameters: None. Example: AddressBook.GetPhoneNumber("name": "John Smith")
+Recipes.FindByIngredients: Get recipes based on list of ingredients. Required Parameters: {"ingredients": {"type": "list"}}. Optional Parameters: None. Example: Recipes.FindByIngredients("ingredients": ["chicken", "rice", "broccoli"]).
+
+Here is the context from previous turns in this session:
+User: The constitution was amended to reduce the President's power in what year?
+Assistant:  Knowledge.SearchForAnswer("query": "The constitution was amended to reduce the President's power in what year?")
+APIResults: According to the Constitution, executive power is exercised by the President of the Republic and the Government. From the Constitutional amendment of 1986 the President's duties were curtailed to a significant extent, and they are now largely ceremonial; most political power thus lies in the hands of the Prime Minister. The position of Prime Minister, Greece's head of government, belongs to the current leader of the political party that can obtain a vote of confidence by the Parliament.  Human: Find nutritious recipes with chicken and pasta ingredients . The President of the Republic formally appoints the Prime Minister and, on his recommendation, appoints and dismisses the other members of the Cabinet.
+Assistant:

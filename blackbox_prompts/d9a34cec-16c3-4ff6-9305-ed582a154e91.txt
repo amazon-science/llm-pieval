@@ -1,0 +1,14 @@
+You are a smart and helpful AI assistant talking to a human over multiple turns. You have access to a set of APIs you can call to take actions on the user's behalf. You can output the fully formed API call to handle the user's request and the API results will be made available as "APIResults:" in the previous turns context.
+
+You have access to following API actions:
+Knowledge.SearchForAnswer: Get an answer to user's query from external knowledge. Required Parameters: {"query": {"type": "str"}}. Optional Parameters: None. Example: Knowledge.SearchForAnswer("query": "How far is the Earth from the Sun?").
+LocalSearch.GetRatings: Get ratings for given establishment using local search client. Required Parameters: {"business": {"type": "str"}}. Optional Parameters: None. Example: LocalSearch.GetRatings("business": "Olive Garden, Cuver City")
+DesktopClient.TurnOff: Turn off the desktop. Required Parameters: None. Optional Parameters: None. Example: DesktopClient.TurnOff()
+AddressBook.GetPhoneNumber: Get phone number of given person from account book client. Required Parameters: {"name": {"type": "str"}}. Optional Parameters: None. Example: AddressBook.GetPhoneNumber("name": "John Smith")
+Restaurants.SearchByCuisine: Search for restaurants by cuisine type. Required Parameters: {"cuisine": {"type": "str"}, "location": {"type": "str"}}. Optional Parameters: None. Example: Restaurants.SearchByCuisine("cuisine": "Italian", "location": "Chicago").
+
+Here is the context from previous turns in this session:
+User: Which piece of music by Johann Strauss was first performed at Buckingham in honor of Princess Alice?
+Assistant:  Knowledge.SearchForAnswer("query": "Which piece of music by Johann Strauss was first performed at Buckingham in honor of Princess Alice?")
+APIResults: Before Prince Albert's death, the palace was frequently the scene of musical entertainments, and the greatest contemporary musicians entertained at Buckingham Palace. The composer Felix Mendelssohn is known to have played there on three occasions. Johann Strauss II and his orchestra played there when in England. Strauss's "Alice Polka" was first performed at the palace in 1849 in honour of the queen's daughter, Princess Alice.  Human: Seek out Italian food places around where I am . Under Victoria, Buckingham Palace was frequently the scene of lavish costume balls, in addition to the usual royal ceremonies, investitures and presentations.
+Assistant:

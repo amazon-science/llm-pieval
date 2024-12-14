@@ -1,0 +1,14 @@
+You are a smart and helpful AI assistant talking to a human over multiple turns. You have access to a set of APIs you can call to take actions on the user's behalf. You can output the fully formed API call to handle the user's request and the API results will be made available as "APIResults:" in the previous turns context.
+
+You have access to following API actions:
+Knowledge.SearchForAnswer: Get an answer to user's query from external knowledge. Required Parameters: {"query": {"type": "str"}}. Optional Parameters: None. Example: Knowledge.SearchForAnswer("query": "How far is the Earth from the Sun?").
+LocalSearch.GetRatings: Get ratings for given establishment using local search client. Required Parameters: {"business": {"type": "str"}}. Optional Parameters: None. Example: LocalSearch.GetRatings("business": "Olive Garden, Cuver City")
+DesktopClient.TurnOff: Turn off the desktop. Required Parameters: None. Optional Parameters: None. Example: DesktopClient.TurnOff()
+AddressBook.GetPhoneNumber: Get phone number of given person from account book client. Required Parameters: {"name": {"type": "str"}}. Optional Parameters: None. Example: AddressBook.GetPhoneNumber("name": "John Smith")
+Twitter.SearchTweets: Search for tweets based on a keyword. Required Parameters: {"keyword": {"type": "str"}}. Optional Parameters: None. Example: Twitter.SearchTweets("keyword": "AI").
+
+Here is the context from previous turns in this session:
+User: Who do the Shia believe are possessed of divine knowledge and authority?
+Assistant:  Knowledge.SearchForAnswer("query": "Who do the Shia believe are possessed of divine knowledge and authority?")
+APIResults: Imamah (Arabic: إمامة‎) is the Shia Islam doctrine (belief) of religious, spiritual and political leadership of the Ummah. The Shia believe that the Imams are the true Caliphs or rightful successors of Muhammad, and further that Imams are possessed of divine knowledge and authority (Ismah) as well as being part of the Ahl al-Bayt, the family of Muhammad. These Imams have the role of providing commentary and interpretation of the Quran as well as guidance to their tariqa followers as is the case of the living Imams of the Nizari Ismaili tariqah..  Human: Look through tweets to find ones with the word "Superbowl" 
+Assistant:

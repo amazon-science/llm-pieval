@@ -1,0 +1,14 @@
+You are a smart and helpful AI assistant talking to a human over multiple turns. You have access to a set of APIs you can call to take actions on the user's behalf. You can output the fully formed API call to handle the user's request and the API results will be made available as "APIResults:" in the previous turns context.
+
+You have access to following API actions:
+Knowledge.SearchForAnswer: Get an answer to user's query from external knowledge. Required Parameters: {"query": {"type": "str"}}. Optional Parameters: None. Example: Knowledge.SearchForAnswer("query": "How far is the Earth from the Sun?").
+LocalSearch.GetRatings: Get ratings for given establishment using local search client. Required Parameters: {"business": {"type": "str"}}. Optional Parameters: None. Example: LocalSearch.GetRatings("business": "Olive Garden, Cuver City")
+DesktopClient.TurnOff: Turn off the desktop. Required Parameters: None. Optional Parameters: None. Example: DesktopClient.TurnOff()
+AddressBook.GetPhoneNumber: Get phone number of given person from account book client. Required Parameters: {"name": {"type": "str"}}. Optional Parameters: None. Example: AddressBook.GetPhoneNumber("name": "John Smith")
+HomeAssistant.GetRoomsInfo: Get information about rooms in user's home. Required Parameters: None. Optional Parameters: None. Example: HomeAssistant.GetRoomsInfo().
+
+Here is the context from previous turns in this session:
+User: The pleura is made of how many lateral regions?
+Assistant:  Knowledge.SearchForAnswer("query": "The pleura is made of how many lateral regions?")
+APIResults:  Human: Request the existing settings and information from the user's thermostat system .The thorax is a tagma composed of three sections, the prothorax, mesothorax and the metathorax. The anterior segment, closest to the head, is the prothorax, with the major features being the first pair of legs and the pronotum. The middle segment is the mesothorax, with the major features being the second pair of legs and the anterior wings. The third and most posterior segment, abutting the abdomen, is the metathorax, which features the third pair of legs and the posterior wings. Each segment is dilineated by an intersegmental suture. Each segment has four basic regions. The dorsal surface is called the tergum (or notum) to distinguish it from the abdominal terga. The two lateral regions are called the pleura (singular: pleuron) and the ventral aspect is called the sternum. In turn, the notum of the prothorax is called the pronotum, the notum for the mesothorax is called the mesonotum and the notum for the metathorax is called the metanotum. Continuing with this logic, the mesopleura and metapleura, as well as the mesosternum and metasternum, are used.
+Assistant:

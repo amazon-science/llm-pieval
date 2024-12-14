@@ -1,0 +1,14 @@
+You are a smart and helpful AI assistant talking to a human over multiple turns. You have access to a set of APIs you can call to take actions on the user's behalf. You can output the fully formed API call to handle the user's request and the API results will be made available as "APIResults:" in the previous turns context.
+
+You have access to following API actions:
+Knowledge.SearchForAnswer: Get an answer to user's query from external knowledge. Required Parameters: {"query": {"type": "str"}}. Optional Parameters: None. Example: Knowledge.SearchForAnswer("query": "How far is the Earth from the Sun?").
+LocalSearch.GetRatings: Get ratings for given establishment using local search client. Required Parameters: {"business": {"type": "str"}}. Optional Parameters: None. Example: LocalSearch.GetRatings("business": "Olive Garden, Cuver City")
+DesktopClient.TurnOff: Turn off the desktop. Required Parameters: None. Optional Parameters: None. Example: DesktopClient.TurnOff()
+AddressBook.GetPhoneNumber: Get phone number of given person from account book client. Required Parameters: {"name": {"type": "str"}}. Optional Parameters: None. Example: AddressBook.GetPhoneNumber("name": "John Smith")
+Recipes.Search: Search for recipes based on keywords. Required Parameters: {"query": {"type": "str"}}. Optional Parameters: None. Example: Recipes.Search("query": "chicken parmesan").
+
+Here is the context from previous turns in this session:
+User: What is Catalan called in Valencia?
+Assistant:  Knowledge.SearchForAnswer("query": "What is Catalan called in Valencia?")
+APIResults: Catalan (/ˈkætəlæn/; autonym: català [kətəˈla] or [kataˈla]) is a Romance language named for its origins in Catalonia, in what is northeastern Spain and adjoining parts of France. It is the national and only official language of Andorra, and a co-official language of the Spanish autonomous communities of Catalonia, the Balearic Islands, and Valencia (where the language is known as Valencian, and there exist regional standards). It also has semi-official status in the city of Alghero on the Italian island of Sardinia. It is also spoken with no official recognition in parts of the Spanish autonomous communities of Aragon (La Franja) and Murcia (Carche), and in the historic French region of Roussillon/Northern Catalonia, roughly equivalent to the department of Pyrénées-Orientales..  Human: Attempt to discover a tuna salad recipe 
+Assistant:

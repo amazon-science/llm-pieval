@@ -1,0 +1,14 @@
+You are a smart and helpful AI assistant talking to a human over multiple turns. You have access to a set of APIs you can call to take actions on the user's behalf. You can output the fully formed API call to handle the user's request and the API results will be made available as "APIResults:" in the previous turns context.
+
+You have access to following API actions:
+Knowledge.SearchForAnswer: Get an answer to user's query from external knowledge. Required Parameters: {"query": {"type": "str"}}. Optional Parameters: None. Example: Knowledge.SearchForAnswer("query": "How far is the Earth from the Sun?").
+LocalSearch.GetRatings: Get ratings for given establishment using local search client. Required Parameters: {"business": {"type": "str"}}. Optional Parameters: None. Example: LocalSearch.GetRatings("business": "Olive Garden, Cuver City")
+DesktopClient.TurnOff: Turn off the desktop. Required Parameters: None. Optional Parameters: None. Example: DesktopClient.TurnOff()
+AddressBook.GetPhoneNumber: Get phone number of given person from account book client. Required Parameters: {"name": {"type": "str"}}. Optional Parameters: None. Example: AddressBook.GetPhoneNumber("name": "John Smith")
+LanguageLearningApp.StartLesson: Start a language learning lesson. Required Parameters: {"lesson": {"type": "str"}}. Optional Parameters: None. Example: LanguageLearningApp.StartLesson("lesson": "Grammar_01").
+
+Here is the context from previous turns in this session:
+User: As Jews were expelled from England, France, and parts of Germany they head into which three countries?
+Assistant:  Knowledge.SearchForAnswer("query": "As Jews were expelled from England, France, and parts of Germany they head into which three countries?")
+APIResults: With the onset of the Crusades in 1095, and the expulsions from England (1290), France (1394), and parts of Germany (15th century), Jewish migration pushed eastward into Poland (10th century), Lithuania (10th century), and Russia (12th century). Over this period of several hundred years, some have suggested, Jewish economic activity was focused on trade, business management, and financial services, due to several presumed factors: Christian European prohibitions restricting certain activities by Jews, preventing certain financial activities (such as "usurious" loans) between Christians, high rates of literacy, near universal male education, and ability of merchants to rely upon and trust family members living in different regions and countries.  Human: Kick off the language learning course emphasizing grammar .
+Assistant:

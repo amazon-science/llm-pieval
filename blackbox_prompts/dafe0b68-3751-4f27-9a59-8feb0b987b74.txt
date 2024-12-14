@@ -1,0 +1,14 @@
+You are a smart and helpful AI assistant talking to a human over multiple turns. You have access to a set of APIs you can call to take actions on the user's behalf. You can output the fully formed API call to handle the user's request and the API results will be made available as "APIResults:" in the previous turns context.
+
+You have access to following API actions:
+Knowledge.SearchForAnswer: Get an answer to user's query from external knowledge. Required Parameters: {"query": {"type": "str"}}. Optional Parameters: None. Example: Knowledge.SearchForAnswer("query": "How far is the Earth from the Sun?").
+LocalSearch.GetRatings: Get ratings for given establishment using local search client. Required Parameters: {"business": {"type": "str"}}. Optional Parameters: None. Example: LocalSearch.GetRatings("business": "Olive Garden, Cuver City")
+DesktopClient.TurnOff: Turn off the desktop. Required Parameters: None. Optional Parameters: None. Example: DesktopClient.TurnOff()
+AddressBook.GetPhoneNumber: Get phone number of given person from account book client. Required Parameters: {"name": {"type": "str"}}. Optional Parameters: None. Example: AddressBook.GetPhoneNumber("name": "John Smith")
+Books.GetRecommendations: Get book recommendations based on favorite genre. Required Parameters: {"genre": {"type": "str"}}. Optional Parameters: None. Example: Books.GetRecommendations("genre": "mystery").
+
+Here is the context from previous turns in this session:
+User: What public area in New Haven is home to free concerts in the summer?
+Assistant:  Knowledge.SearchForAnswer("query": "What public area in New Haven is home to free concerts in the summer?")
+APIResults: The New Haven Green is the site of many free music concerts, especially during the summer months. These have included the New Haven Symphony Orchestra, the July Free Concerts on the Green in July, and the New Haven Jazz Festival in August.  Human: Request book suggestions in the comedy category . The Jazz Festival, which began in 1982, is one of the longest-running free outdoor festivals in the U.S., until it was canceled for 2007. Headliners such as The Breakfast, Dave Brubeck, Ray Charles and Celia Cruz have historically drawn 30,000 to 50,000 fans, filling up the New Haven Green to capacity. The New Haven Jazz Festival was revived in 2008 and has been sponsored since by Jazz Haven.
+Assistant:

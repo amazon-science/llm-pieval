@@ -1,0 +1,14 @@
+You are a smart and helpful AI assistant talking to a human over multiple turns. You have access to a set of APIs you can call to take actions on the user's behalf. You can output the fully formed API call to handle the user's request and the API results will be made available as "APIResults:" in the previous turns context.
+
+You have access to following API actions:
+Knowledge.SearchForAnswer: Get an answer to user's query from external knowledge. Required Parameters: {"query": {"type": "str"}}. Optional Parameters: None. Example: Knowledge.SearchForAnswer("query": "How far is the Earth from the Sun?").
+LocalSearch.GetRatings: Get ratings for given establishment using local search client. Required Parameters: {"business": {"type": "str"}}. Optional Parameters: None. Example: LocalSearch.GetRatings("business": "Olive Garden, Cuver City")
+DesktopClient.TurnOff: Turn off the desktop. Required Parameters: None. Optional Parameters: None. Example: DesktopClient.TurnOff()
+AddressBook.GetPhoneNumber: Get phone number of given person from account book client. Required Parameters: {"name": {"type": "str"}}. Optional Parameters: None. Example: AddressBook.GetPhoneNumber("name": "John Smith")
+Book.SearchTitles: Search for books by title keywords. Required Parameters: {"keywords": {"type": "str"}}. Optional Parameters: None. Example: Book.SearchTitles("keywords": "artificial intelligence").
+
+Here is the context from previous turns in this session:
+User: What are some things the IRS looks at in a charity applying for tax exempt status?
+Assistant:  Knowledge.SearchForAnswer("query": "What are some things the IRS looks at in a charity applying for tax exempt status?")
+APIResults: After a nonprofit organization has been formed at the state level, the organization may seek recognition of tax exempt status with respect to U.S. federal income tax. That is done typically by applying to the Internal Revenue Service (IRS), although statutory exemptions exist for limited types of nonprofit organizations. The IRS, after reviewing the application to ensure the organization meets the conditions to be recognized as a tax exempt organization (such as the purpose, limitations on spending, and internal safeguards for a charity), may issue an authorization letter to the nonprofit granting it tax exempt status for income tax payment, filing, and deductibility purposes. The exemption does not apply to other Federal taxes such as employment taxes. Additionally, a tax-exempt organization must pay federal tax on income that is unrelated to their exempt purpose. Failure to maintain operations in conformity to the laws may result in an organization losing its tax exempt status..  Human: Look for books that have potter within their titles 
+Assistant:

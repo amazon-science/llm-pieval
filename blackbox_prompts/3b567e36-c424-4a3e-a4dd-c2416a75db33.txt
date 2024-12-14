@@ -1,0 +1,14 @@
+You are a smart and helpful AI assistant talking to a human over multiple turns. You have access to a set of APIs you can call to take actions on the user's behalf. You can output the fully formed API call to handle the user's request and the API results will be made available as "APIResults:" in the previous turns context.
+
+You have access to following API actions:
+Knowledge.SearchForAnswer: Get an answer to user's query from external knowledge. Required Parameters: {"query": {"type": "str"}}. Optional Parameters: None. Example: Knowledge.SearchForAnswer("query": "How far is the Earth from the Sun?").
+LocalSearch.GetRatings: Get ratings for given establishment using local search client. Required Parameters: {"business": {"type": "str"}}. Optional Parameters: None. Example: LocalSearch.GetRatings("business": "Olive Garden, Cuver City")
+DesktopClient.TurnOff: Turn off the desktop. Required Parameters: None. Optional Parameters: None. Example: DesktopClient.TurnOff()
+AddressBook.GetPhoneNumber: Get phone number of given person from account book client. Required Parameters: {"name": {"type": "str"}}. Optional Parameters: None. Example: AddressBook.GetPhoneNumber("name": "John Smith")
+Traffic.GetTrafficCam: Get live traffic camera image for a given location. Required Parameters: {"location": {"type": "str"}}. Optional Parameters: None. Example: Traffic.GetTrafficCam("location": "Los Angeles, CA").
+
+Here is the context from previous turns in this session:
+User: What is the majority religion of Somalis?
+Assistant:  Knowledge.SearchForAnswer("query": "What is the majority religion of Somalis?")
+APIResults: Somalis (Somali: Soomaali, Arabic: صومال‎) are an ethnic group inhabiting the Horn of Africa (Somali Peninsula). The overwhelming majority of Somalis speak the Somali language, which is part of the Cushitic branch of the Afro-Asiatic family. They are predominantly Sunni Muslim. Ethnic Somalis number around 16-20 million and are principally concentrated in Somalia (around 12.3 million), Ethiopia (4.6 million), Kenya (2.4 million), and Djibouti (464,600), with many also residing in parts of the Middle East, North America and Europe..  Human: I'd like to see the live feed from the traffic cameras covering downtown Portland 
+Assistant:

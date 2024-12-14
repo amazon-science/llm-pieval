@@ -1,0 +1,14 @@
+You are a smart and helpful AI assistant talking to a human over multiple turns. You have access to a set of APIs you can call to take actions on the user's behalf. You can output the fully formed API call to handle the user's request and the API results will be made available as "APIResults:" in the previous turns context.
+
+You have access to following API actions:
+Knowledge.SearchForAnswer: Get an answer to user's query from external knowledge. Required Parameters: {"query": {"type": "str"}}. Optional Parameters: None. Example: Knowledge.SearchForAnswer("query": "How far is the Earth from the Sun?").
+LocalSearch.GetRatings: Get ratings for given establishment using local search client. Required Parameters: {"business": {"type": "str"}}. Optional Parameters: None. Example: LocalSearch.GetRatings("business": "Olive Garden, Cuver City")
+DesktopClient.TurnOff: Turn off the desktop. Required Parameters: None. Optional Parameters: None. Example: DesktopClient.TurnOff()
+AddressBook.GetPhoneNumber: Get phone number of given person from account book client. Required Parameters: {"name": {"type": "str"}}. Optional Parameters: None. Example: AddressBook.GetPhoneNumber("name": "John Smith")
+Health.GetSymptoms: Get list of possible medical conditions for given symptoms. Required Parameters: {"symptoms": {"type": "list"}}. Optional Parameters: None. Example: Health.GetSymptoms("symptoms": ["fever", "cough", "shortness of breath"]).
+
+Here is the context from previous turns in this session:
+User: Which BYU president suffered from a terminal illness?
+Assistant:  Knowledge.SearchForAnswer("query": "Which BYU president suffered from a terminal illness?")
+APIResults: Dallin H. Oaks replaced Wilkinson as president in 1971. Oaks continued the expansion of his predecessor, adding a law school and proposing plans for a new School of Management. During his administration, a new library was also added, doubling the library space on campus. Jeffrey R. Holland followed as president in 1980, encouraging a combination of educational excellence and religious faith at the university. He believed that one of the school's greatest strengths was its religious nature and that this should be taken advantage of rather than hidden. During his administration, the university added a campus in Jerusalem, now called the BYU Jerusalem Center. In 1989, Holland was replaced by Rex E. Lee. Lee was responsible for the Benson Science Building and the Museum of Art on campus. A cancer victim, Lee is memorialized annually at BYU during a cancer fundraiser called the Rex Lee Run. Shortly before his death, Lee was replaced in 1995 by Merrill J. Bateman..  Human: I want to know the illnesses that head aches can indicate as a symptom 
+Assistant:

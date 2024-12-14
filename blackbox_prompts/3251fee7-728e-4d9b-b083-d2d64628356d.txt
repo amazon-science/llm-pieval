@@ -1,0 +1,14 @@
+You are a smart and helpful AI assistant talking to a human over multiple turns. You have access to a set of APIs you can call to take actions on the user's behalf. You can output the fully formed API call to handle the user's request and the API results will be made available as "APIResults:" in the previous turns context.
+
+You have access to following API actions:
+Knowledge.SearchForAnswer: Get an answer to user's query from external knowledge. Required Parameters: {"query": {"type": "str"}}. Optional Parameters: None. Example: Knowledge.SearchForAnswer("query": "How far is the Earth from the Sun?").
+LocalSearch.GetRatings: Get ratings for given establishment using local search client. Required Parameters: {"business": {"type": "str"}}. Optional Parameters: None. Example: LocalSearch.GetRatings("business": "Olive Garden, Cuver City")
+DesktopClient.TurnOff: Turn off the desktop. Required Parameters: None. Optional Parameters: None. Example: DesktopClient.TurnOff()
+AddressBook.GetPhoneNumber: Get phone number of given person from account book client. Required Parameters: {"name": {"type": "str"}}. Optional Parameters: None. Example: AddressBook.GetPhoneNumber("name": "John Smith")
+Music.GetTopAlbums: Get list of current top albums on music charts. Required Parameters: None. Optional Parameters: None. Example: Music.GetTopAlbums().
+
+Here is the context from previous turns in this session:
+User: What time period did the Chalukya dynasty rule the Hyderabad region?
+Assistant:  Knowledge.SearchForAnswer("query": "What time period did the Chalukya dynasty rule the Hyderabad region?")
+APIResults:  Human: View the 10 highest ranked albums currently on Spotify .Archaeologists excavating near the city have unearthed Iron Age sites that may date from 500 BCE. The region comprising modern Hyderabad and its surroundings was known as Golkonda (Golla Konda-"shepherd's hill"), and was ruled by the Chalukya dynasty from 624 CE to 1075 CE. Following the dissolution of the Chalukya empire into four parts in the 11th century, Golkonda came under the control of the Kakatiya dynasty from 1158, whose seat of power was at Warangal, 148 km (92 mi) northeast of modern Hyderabad.
+Assistant:

@@ -1,0 +1,14 @@
+You are a smart and helpful AI assistant talking to a human over multiple turns. You have access to a set of APIs you can call to take actions on the user's behalf. You can output the fully formed API call to handle the user's request and the API results will be made available as "APIResults:" in the previous turns context.
+
+You have access to following API actions:
+Knowledge.SearchForAnswer: Get an answer to user's query from external knowledge. Required Parameters: {"query": {"type": "str"}}. Optional Parameters: None. Example: Knowledge.SearchForAnswer("query": "How far is the Earth from the Sun?").
+LocalSearch.GetRatings: Get ratings for given establishment using local search client. Required Parameters: {"business": {"type": "str"}}. Optional Parameters: None. Example: LocalSearch.GetRatings("business": "Olive Garden, Cuver City")
+DesktopClient.TurnOff: Turn off the desktop. Required Parameters: None. Optional Parameters: None. Example: DesktopClient.TurnOff()
+AddressBook.GetPhoneNumber: Get phone number of given person from account book client. Required Parameters: {"name": {"type": "str"}}. Optional Parameters: None. Example: AddressBook.GetPhoneNumber("name": "John Smith")
+SmartSpeaker.PlayPodcast: Play a podcast on a smart speaker. Required Parameters: {"podcast_name": {"type": "str"}}. Optional Parameters: None. Example: SmartSpeaker.PlayPodcast("podcast_name": "The Daily").
+
+Here is the context from previous turns in this session:
+User: Deshin Shekpa was the head of what school?
+Assistant:  Knowledge.SearchForAnswer("query": "Deshin Shekpa was the head of what school?")
+APIResults: Some scholars note that Tibetan leaders during the Ming frequently engaged in civil war and conducted their own foreign diplomacy with neighboring states such as Nepal. Some scholars underscore the commercial aspect of the Ming-Tibetan relationship, noting the Ming dynasty's shortage of horses for warfare and thus the importance of the horse trade with Tibet.  Human: Begin playing the podcast with the name "the daily report" on the smart speaker . Others argue that the significant religious nature of the relationship of the Ming court with Tibetan lamas is underrepresented in modern scholarship. In hopes of reviving the unique relationship of the earlier Mongol leader Kublai Khan (r. 1260–1294) and his spiritual superior Drogön Chögyal Phagpa (1235–1280) of the Sakya school of Tibetan Buddhism, the Yongle Emperor (r. 1402–1424) made a concerted effort to build a secular and religious alliance with Deshin Shekpa (1384–1415), the Karmapa of the Karma Kagyu school. However, the Yongle Emperor's attempts were unsuccessful.
+Assistant:

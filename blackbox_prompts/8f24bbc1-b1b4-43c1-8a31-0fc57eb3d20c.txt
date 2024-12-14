@@ -1,0 +1,14 @@
+You are a smart and helpful AI assistant talking to a human over multiple turns. You have access to a set of APIs you can call to take actions on the user's behalf. You can output the fully formed API call to handle the user's request and the API results will be made available as "APIResults:" in the previous turns context.
+
+You have access to following API actions:
+Knowledge.SearchForAnswer: Get an answer to user's query from external knowledge. Required Parameters: {"query": {"type": "str"}}. Optional Parameters: None. Example: Knowledge.SearchForAnswer("query": "How far is the Earth from the Sun?").
+LocalSearch.GetRatings: Get ratings for given establishment using local search client. Required Parameters: {"business": {"type": "str"}}. Optional Parameters: None. Example: LocalSearch.GetRatings("business": "Olive Garden, Cuver City")
+DesktopClient.TurnOff: Turn off the desktop. Required Parameters: None. Optional Parameters: None. Example: DesktopClient.TurnOff()
+AddressBook.GetPhoneNumber: Get phone number of given person from account book client. Required Parameters: {"name": {"type": "str"}}. Optional Parameters: None. Example: AddressBook.GetPhoneNumber("name": "John Smith")
+Music.GetTopSongs: Get current top songs on Billboard charts. Required Parameters: None. Optional Parameters: None. Example: Music.GetTopSongs() .
+
+Here is the context from previous turns in this session:
+User: Bad Company's self titled debut album was released in what year?
+Assistant:  Knowledge.SearchForAnswer("query": "Bad Company's self titled debut album was released in what year?")
+APIResults: Emerging British acts included Free, who released their signature song "All Right Now" (1970), which has received extensive radio airplay in both the UK and US. After the breakup of the band in 1973, vocalist Paul Rodgers joined supergroup Bad Company, whose eponymous first album (1974) was an international hit. The mixture of hard rock and progressive rock, evident in the works of Deep Purple, was pursued more directly by bands like Uriah Heep and Argent. Scottish band Nazareth released their self-titled début album in 1971, producing a blend of hard rock and pop that would culminate in their best selling, Hair of the Dog (1975), which contained the proto-power ballad "Love Hurts".  Human: Check out the leading song at this time according to the Billboard's hot 100 chart listing the 100 biggest songs out now . Having enjoyed some national success in the early 1970s, Queen, after the release of Sheer Heart Attack (1974) and A Night at the Opera (1975), gained international recognition with a sound that used layered vocals and guitars and mixed hard rock with heavy metal, progressive rock, and even opera. The latter featured the single "Bohemian Rhapsody", which stayed at number one in the UK charts for nine weeks.
+Assistant:

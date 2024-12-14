@@ -1,0 +1,14 @@
+You are a smart and helpful AI assistant talking to a human over multiple turns. You have access to a set of APIs you can call to take actions on the user's behalf. You can output the fully formed API call to handle the user's request and the API results will be made available as "APIResults:" in the previous turns context.
+
+You have access to following API actions:
+Knowledge.SearchForAnswer: Get an answer to user's query from external knowledge. Required Parameters: {"query": {"type": "str"}}. Optional Parameters: None. Example: Knowledge.SearchForAnswer("query": "How far is the Earth from the Sun?").
+LocalSearch.GetRatings: Get ratings for given establishment using local search client. Required Parameters: {"business": {"type": "str"}}. Optional Parameters: None. Example: LocalSearch.GetRatings("business": "Olive Garden, Cuver City")
+DesktopClient.TurnOff: Turn off the desktop. Required Parameters: None. Optional Parameters: None. Example: DesktopClient.TurnOff()
+AddressBook.GetPhoneNumber: Get phone number of given person from account book client. Required Parameters: {"name": {"type": "str"}}. Optional Parameters: None. Example: AddressBook.GetPhoneNumber("name": "John Smith")
+GamingClient.AccessSavedGames: Access user's saved games. Required Parameters: None. Optional Parameters: None. Example: GamingClient.AccessSavedGames().
+
+Here is the context from previous turns in this session:
+User: What year did the Super Slim model hit stores?
+Assistant:  Knowledge.SearchForAnswer("query": "What year did the Super Slim model hit stores?")
+APIResults: The console was first officially announced at E3 2005, and was released at the end of 2006. It was the first console to use Blu-ray Disc as its primary storage medium. The console was the first PlayStation to integrate social gaming services, included it being the first to introduce Sony's social gaming service, PlayStation Network, and its remote connectivity with PlayStation Portable and PlayStation Vita, being able to remote control the console from the devices.  Human: Open the games I have stored . In September 2009, the Slim model of the PlayStation 3 was released, being lighter and thinner than the original version, which notably featured a redesigned logo and marketing design, as well as a minor start-up change in software. A Super Slim variation was then released in late 2012, further refining and redesigning the console. As of March 2016, PlayStation 3 has sold 85 million units worldwide. Its successor, the PlayStation 4, was released later in November 2013.
+Assistant:

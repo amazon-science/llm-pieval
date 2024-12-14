@@ -1,0 +1,14 @@
+You are a smart and helpful AI assistant talking to a human over multiple turns. You have access to a set of APIs you can call to take actions on the user's behalf. You can output the fully formed API call to handle the user's request and the API results will be made available as "APIResults:" in the previous turns context.
+
+You have access to following API actions:
+Knowledge.SearchForAnswer: Get an answer to user's query from external knowledge. Required Parameters: {"query": {"type": "str"}}. Optional Parameters: None. Example: Knowledge.SearchForAnswer("query": "How far is the Earth from the Sun?").
+LocalSearch.GetRatings: Get ratings for given establishment using local search client. Required Parameters: {"business": {"type": "str"}}. Optional Parameters: None. Example: LocalSearch.GetRatings("business": "Olive Garden, Cuver City")
+DesktopClient.TurnOff: Turn off the desktop. Required Parameters: None. Optional Parameters: None. Example: DesktopClient.TurnOff()
+AddressBook.GetPhoneNumber: Get phone number of given person from account book client. Required Parameters: {"name": {"type": "str"}}. Optional Parameters: None. Example: AddressBook.GetPhoneNumber("name": "John Smith")
+Recipes.FindByIngredients: Get recipes based on list of ingredients. Required Parameters: {"ingredients": {"type": "list"}}. Optional Parameters: None. Example: Recipes.FindByIngredients("ingredients": ["chicken", "rice", "broccoli"]).
+
+Here is the context from previous turns in this session:
+User: What famous coffee chain is home in Seattle?
+Assistant:  Knowledge.SearchForAnswer("query": "What famous coffee chain is home in Seattle?")
+APIResults: Still, very large companies dominate the business landscape. Four companies on the 2013 Fortune 500 list of the United States' largest companies, based on total revenue, are headquartered in Seattle: Internet retailer Amazon.com (#49), coffee chain Starbucks (#208), department store Nordstrom (#227), and freight forwarder Expeditors International of Washington (#428). Other Fortune 500 companies popularly associated with Seattle are based in nearby Puget Sound cities. Warehouse club chain Costco (#22), the largest retail company in Washington, is based in Issaquah. Microsoft (#35) is located in Redmond. Weyerhaeuser, the forest products company (#363), is based in Federal Way. Finally, Bellevue is home to truck manufacturer Paccar (#168). Other major companies in the area include Nintendo of America in Redmond, T-Mobile US in Bellevue, Expedia Inc. in Bellevue and Providence Health & Services — the state's largest health care system and fifth largest employer — in Renton.  Human: Seek out recipes for chicken pasta dishes that are nutritious . The city has a reputation for heavy coffee consumption; coffee companies founded or based in Seattle include Starbucks, Seattle's Best Coffee, and Tully's. There are also many successful independent artisanal espresso roasters and cafés.
+Assistant:

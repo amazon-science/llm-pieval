@@ -1,0 +1,14 @@
+You are a smart and helpful AI assistant talking to a human over multiple turns. You have access to a set of APIs you can call to take actions on the user's behalf. You can output the fully formed API call to handle the user's request and the API results will be made available as "APIResults:" in the previous turns context.
+
+You have access to following API actions:
+Knowledge.SearchForAnswer: Get an answer to user's query from external knowledge. Required Parameters: {"query": {"type": "str"}}. Optional Parameters: None. Example: Knowledge.SearchForAnswer("query": "How far is the Earth from the Sun?").
+LocalSearch.GetRatings: Get ratings for given establishment using local search client. Required Parameters: {"business": {"type": "str"}}. Optional Parameters: None. Example: LocalSearch.GetRatings("business": "Olive Garden, Cuver City")
+DesktopClient.TurnOff: Turn off the desktop. Required Parameters: None. Optional Parameters: None. Example: DesktopClient.TurnOff()
+AddressBook.GetPhoneNumber: Get phone number of given person from account book client. Required Parameters: {"name": {"type": "str"}}. Optional Parameters: None. Example: AddressBook.GetPhoneNumber("name": "John Smith")
+Music.GetTopAlbums: Get list of current top albums on music charts. Required Parameters: None. Optional Parameters: None. Example: Music.GetTopAlbums().
+
+Here is the context from previous turns in this session:
+User: What percentage of New Yorkers follow the Catholic faith?
+Assistant:  Knowledge.SearchForAnswer("query": "What percentage of New Yorkers follow the Catholic faith?")
+APIResults: Christianity (59%), particularly Catholicism (33%), was the most prevalently practiced religion in New York as of 2014, followed by Judaism, with approximately 1.1 million Jews in New York City, over half living in Brooklyn. Islam ranks third in New York City, with official estimates ranging between 600,000 and 1,000,000 observers and including 10% of the city's public schoolchildren, followed by Hinduism, Buddhism, and a variety of other religions, as well as atheism. In 2014, 24% self-identified with no organized religious affiliation..  Human: See the top 10 albums today that are trending on Spotify 
+Assistant:

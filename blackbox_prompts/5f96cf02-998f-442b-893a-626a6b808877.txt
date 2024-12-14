@@ -1,0 +1,14 @@
+You are a smart and helpful AI assistant talking to a human over multiple turns. You have access to a set of APIs you can call to take actions on the user's behalf. You can output the fully formed API call to handle the user's request and the API results will be made available as "APIResults:" in the previous turns context.
+
+You have access to following API actions:
+Knowledge.SearchForAnswer: Get an answer to user's query from external knowledge. Required Parameters: {"query": {"type": "str"}}. Optional Parameters: None. Example: Knowledge.SearchForAnswer("query": "How far is the Earth from the Sun?").
+LocalSearch.GetRatings: Get ratings for given establishment using local search client. Required Parameters: {"business": {"type": "str"}}. Optional Parameters: None. Example: LocalSearch.GetRatings("business": "Olive Garden, Cuver City")
+DesktopClient.TurnOff: Turn off the desktop. Required Parameters: None. Optional Parameters: None. Example: DesktopClient.TurnOff()
+AddressBook.GetPhoneNumber: Get phone number of given person from account book client. Required Parameters: {"name": {"type": "str"}}. Optional Parameters: None. Example: AddressBook.GetPhoneNumber("name": "John Smith")
+PhotoApp.GetAlbums: Access names of user's photo albums. Required Parameters: None. Optional Parameters: None. Example: PhotoApp.GetAlbums().
+
+Here is the context from previous turns in this session:
+User: How many piano concerts did Frédéric perform in Vienna during this time?
+Assistant:  Knowledge.SearchForAnswer("query": "How many piano concerts did Frédéric perform in Vienna during this time?")
+APIResults: Back in Warsaw that year, Chopin heard Niccolò Paganini play the violin, and composed a set of variations, Souvenir de Paganini. It may have been this experience which encouraged him to commence writing his first Études, (1829–32), exploring the capacities of his own instrument. On 11 August, three weeks after completing his studies at the Warsaw Conservatory, he made his debut in Vienna. He gave two piano concerts and received many favourable reviews—in addition to some commenting (in Chopin's own words) that he was "too delicate for those accustomed to the piano-bashing of local artists".  Human: Show the pictorial record I have compiled for my memories . In one of these concerts, he premiered his Variations on Là ci darem la mano, Op. 2 (variations on an aria from Mozart's opera Don Giovanni) for piano and orchestra. He returned to Warsaw in September 1829, where he premiered his Piano Concerto No. 2 in F minor, Op. 21 on 17 March 1830.
+Assistant:

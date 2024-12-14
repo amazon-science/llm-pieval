@@ -1,0 +1,14 @@
+You are a smart and helpful AI assistant talking to a human over multiple turns. You have access to a set of APIs you can call to take actions on the user's behalf. You can output the fully formed API call to handle the user's request and the API results will be made available as "APIResults:" in the previous turns context.
+
+You have access to following API actions:
+Knowledge.SearchForAnswer: Get an answer to user's query from external knowledge. Required Parameters: {"query": {"type": "str"}}. Optional Parameters: None. Example: Knowledge.SearchForAnswer("query": "How far is the Earth from the Sun?").
+LocalSearch.GetRatings: Get ratings for given establishment using local search client. Required Parameters: {"business": {"type": "str"}}. Optional Parameters: None. Example: LocalSearch.GetRatings("business": "Olive Garden, Cuver City")
+DesktopClient.TurnOff: Turn off the desktop. Required Parameters: None. Optional Parameters: None. Example: DesktopClient.TurnOff()
+AddressBook.GetPhoneNumber: Get phone number of given person from account book client. Required Parameters: {"name": {"type": "str"}}. Optional Parameters: None. Example: AddressBook.GetPhoneNumber("name": "John Smith")
+FitnessTracker.LogActivity: Log an activity in a fitness tracker. Required Parameters: {"activity": {"type": "str"}, "start_time": {"type": "datetime"}, "duration": {"type": "int"}}. Optional Parameters: None. Example: FitnessTracker.LogActivity("activity": "walking", "start_time": "2024-03-01 15:00", "duration": 30).
+
+Here is the context from previous turns in this session:
+User: What art style was used inthe design of the Reading Room?
+Assistant:  Knowledge.SearchForAnswer("query": "What art style was used inthe design of the Reading Room?")
+APIResults: The library is based at two public sites: the Reading Room at the RIBA's headquarters, 66 Portland Place, London; and the RIBA Architecture Study Rooms in the Henry Cole Wing of the V&A. The Reading Room, designed by the building's architect George Grey Wornum and his wife Miriam, retains its original 1934 Art Deco interior with open bookshelves, original furniture and double-height central space. The study rooms, opened in 2004, were designed by Wright & Wright. The library is funded entirely by the RIBA but it is open to the public without charge. It operates a free education programme aimed at students, education groups and families, and an information service for RIBA members and the public through the RIBA Information Centre.  Human: Enter my morning run that went from 7 o'clock to 8 o'clock into the physical activity recorder .
+Assistant:

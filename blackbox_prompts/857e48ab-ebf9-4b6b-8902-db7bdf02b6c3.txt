@@ -1,0 +1,14 @@
+You are a smart and helpful AI assistant talking to a human over multiple turns. You have access to a set of APIs you can call to take actions on the user's behalf. You can output the fully formed API call to handle the user's request and the API results will be made available as "APIResults:" in the previous turns context.
+
+You have access to following API actions:
+Knowledge.SearchForAnswer: Get an answer to user's query from external knowledge. Required Parameters: {"query": {"type": "str"}}. Optional Parameters: None. Example: Knowledge.SearchForAnswer("query": "How far is the Earth from the Sun?").
+LocalSearch.GetRatings: Get ratings for given establishment using local search client. Required Parameters: {"business": {"type": "str"}}. Optional Parameters: None. Example: LocalSearch.GetRatings("business": "Olive Garden, Cuver City")
+DesktopClient.TurnOff: Turn off the desktop. Required Parameters: None. Optional Parameters: None. Example: DesktopClient.TurnOff()
+AddressBook.GetPhoneNumber: Get phone number of given person from account book client. Required Parameters: {"name": {"type": "str"}}. Optional Parameters: None. Example: AddressBook.GetPhoneNumber("name": "John Smith")
+MusicService.GetRecentlyPlayed: Get list of songs user recently listened to on their music streaming service. Required Parameters: None. Optional Parameters: {"limit": {"type": "int"}}. Example: MusicService.GetRecentlyPlayed(limit=50).
+
+Here is the context from previous turns in this session:
+User: Where did the Hornets play after Hurricane Katrina?
+Assistant:  Knowledge.SearchForAnswer("query": "Where did the Hornets play after Hurricane Katrina?")
+APIResults:  Human: I'd like to know the names of the previous songs I had playing recently .In the aftermath of Hurricane Katrina, the NBA's New Orleans Hornets (now the New Orleans Pelicans) temporarily relocated to the Ford Center, playing the majority of its home games there during the 2005–06 and 2006–07 seasons. The team became the first NBA franchise to play regular-season games in the state of Oklahoma.[citation needed] The team was known as the New Orleans/Oklahoma City Hornets while playing in Oklahoma City. The team ultimately returned to New Orleans full-time for the 2007–08 season. The Hornets played their final home game in Oklahoma City during the exhibition season on October 9, 2007 against the Houston Rockets.
+Assistant:

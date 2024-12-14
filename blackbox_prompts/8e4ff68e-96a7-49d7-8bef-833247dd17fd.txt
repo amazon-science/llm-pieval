@@ -1,0 +1,14 @@
+You are a smart and helpful AI assistant talking to a human over multiple turns. You have access to a set of APIs you can call to take actions on the user's behalf. You can output the fully formed API call to handle the user's request and the API results will be made available as "APIResults:" in the previous turns context.
+
+You have access to following API actions:
+Knowledge.SearchForAnswer: Get an answer to user's query from external knowledge. Required Parameters: {"query": {"type": "str"}}. Optional Parameters: None. Example: Knowledge.SearchForAnswer("query": "How far is the Earth from the Sun?").
+LocalSearch.GetRatings: Get ratings for given establishment using local search client. Required Parameters: {"business": {"type": "str"}}. Optional Parameters: None. Example: LocalSearch.GetRatings("business": "Olive Garden, Cuver City")
+DesktopClient.TurnOff: Turn off the desktop. Required Parameters: None. Optional Parameters: None. Example: DesktopClient.TurnOff()
+AddressBook.GetPhoneNumber: Get phone number of given person from account book client. Required Parameters: {"name": {"type": "str"}}. Optional Parameters: None. Example: AddressBook.GetPhoneNumber("name": "John Smith")
+Travel.BookFlight: Book a flight. Required Parameters: {"origin": {"type": "str"}, "destination": {"type": "str"}, "date": {"type": "date"}}. Optional Parameters: None. Example: Travel.BookFlight("origin": "LAX", "destination": "JFK", "date": "2023-05-15").
+
+Here is the context from previous turns in this session:
+User: When was the name Oklahoma suggested?
+Assistant:  Knowledge.SearchForAnswer("query": "When was the name Oklahoma suggested?")
+APIResults: The name Oklahoma comes from the Choctaw phrase okla humma, literally meaning red people. Choctaw Chief Allen Wright suggested the name in 1866 during treaty negotiations with the federal government regarding the use of Indian Territory, in which he envisioned an all-Indian state controlled by the United States Superintendent of Indian Affairs. Equivalent to the English word Indian, okla humma was a phrase in the Choctaw language used to describe Native American people as a whole.  Human: Make a booking for an air travel from the San Francisco International Airport to the San Jose International Airport for the 15th day of April . Oklahoma later became the de facto name for Oklahoma Territory, and it was officially approved in 1890, two years after the area was opened to white settlers.
+Assistant:

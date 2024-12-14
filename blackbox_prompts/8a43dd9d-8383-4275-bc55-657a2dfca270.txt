@@ -1,0 +1,14 @@
+You are a smart and helpful AI assistant talking to a human over multiple turns. You have access to a set of APIs you can call to take actions on the user's behalf. You can output the fully formed API call to handle the user's request and the API results will be made available as "APIResults:" in the previous turns context.
+
+You have access to following API actions:
+Knowledge.SearchForAnswer: Get an answer to user's query from external knowledge. Required Parameters: {"query": {"type": "str"}}. Optional Parameters: None. Example: Knowledge.SearchForAnswer("query": "How far is the Earth from the Sun?").
+LocalSearch.GetRatings: Get ratings for given establishment using local search client. Required Parameters: {"business": {"type": "str"}}. Optional Parameters: None. Example: LocalSearch.GetRatings("business": "Olive Garden, Cuver City")
+DesktopClient.TurnOff: Turn off the desktop. Required Parameters: None. Optional Parameters: None. Example: DesktopClient.TurnOff()
+AddressBook.GetPhoneNumber: Get phone number of given person from account book client. Required Parameters: {"name": {"type": "str"}}. Optional Parameters: None. Example: AddressBook.GetPhoneNumber("name": "John Smith")
+Books.SearchByTitle: Search for books by title keyword. Required Parameters: {"query": {"type": "str"}}. Optional Parameters: None. Example: Books.SearchByTitle("query": "Harry Potter") .
+
+Here is the context from previous turns in this session:
+User: In 2008, Melbourne overtook what city with the amount of money that domestic tourists spent in the city?
+Assistant:  Knowledge.SearchForAnswer("query": "In 2008, Melbourne overtook what city with the amount of money that domestic tourists spent in the city?")
+APIResults: CSL, one of the world's top five biotech companies, and Sigma Pharmaceuticals have their headquarters in Melbourne. The two are the largest listed Australian pharmaceutical companies. Melbourne has an important ICT industry that employs over 60,000 people (one third of Australia's ICT workforce), with a turnover of $19.8 billion and export revenues of $615 million. In addition, tourism also plays an important role in Melbourne's economy, with about 7.  Human: Look in every book for the words Harry Potter in the title .6 million domestic visitors and 1.88 million international visitors in 2004. In 2008, Melbourne overtook Sydney with the amount of money that domestic tourists spent in the city, accounting for around $15.8 billion annually. Melbourne has been attracting an increasing share of domestic and international conference markets. Construction began in February 2006 of a $1 billion 5000-seat international convention centre, Hilton Hotel and commercial precinct adjacent to the Melbourne Exhibition and Convention Centre to link development along the Yarra River with the Southbank precinct and multibillion-dollar Docklands redevelopment.
+Assistant:

@@ -1,0 +1,14 @@
+You are a smart and helpful AI assistant talking to a human over multiple turns. You have access to a set of APIs you can call to take actions on the user's behalf. You can output the fully formed API call to handle the user's request and the API results will be made available as "APIResults:" in the previous turns context.
+
+You have access to following API actions:
+Knowledge.SearchForAnswer: Get an answer to user's query from external knowledge. Required Parameters: {"query": {"type": "str"}}. Optional Parameters: None. Example: Knowledge.SearchForAnswer("query": "How far is the Earth from the Sun?").
+LocalSearch.GetRatings: Get ratings for given establishment using local search client. Required Parameters: {"business": {"type": "str"}}. Optional Parameters: None. Example: LocalSearch.GetRatings("business": "Olive Garden, Cuver City")
+DesktopClient.TurnOff: Turn off the desktop. Required Parameters: None. Optional Parameters: None. Example: DesktopClient.TurnOff()
+AddressBook.GetPhoneNumber: Get phone number of given person from account book client. Required Parameters: {"name": {"type": "str"}}. Optional Parameters: None. Example: AddressBook.GetPhoneNumber("name": "John Smith")
+Twitter.SearchTweets: Search for tweets based on a keyword. Required Parameters: {"keyword": {"type": "str"}}. Optional Parameters: None. Example: Twitter.SearchTweets("keyword": "AI").
+
+Here is the context from previous turns in this session:
+User: What is the most commonly seen species?
+Assistant:  Knowledge.SearchForAnswer("query": "What is the most commonly seen species?")
+APIResults: Animals that characterize the Appalachian forests include five species of tree squirrels. The most commonly seen is the low to moderate elevation eastern gray squirrel (Sciurus carolinensis). Occupying similar habitat is the slightly larger fox squirrel (Sciurus niger) and the much smaller southern flying squirrel (Glaucomys volans). More characteristic of cooler northern and high elevation habitat is the red squirrel (Tamiasciurus hudsonicus), whereas the Appalachian northern flying squirrel (Glaucomys sabrinus fuscus), which closely resembles the southern flying squirrel, is confined to northern hardwood and spruce-fir forests.  Human: Investigate tweets to locate those that include the keyword "Superbowl" .
+Assistant:

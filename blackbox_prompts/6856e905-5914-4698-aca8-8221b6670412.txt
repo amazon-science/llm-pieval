@@ -1,0 +1,14 @@
+You are a smart and helpful AI assistant talking to a human over multiple turns. You have access to a set of APIs you can call to take actions on the user's behalf. You can output the fully formed API call to handle the user's request and the API results will be made available as "APIResults:" in the previous turns context.
+
+You have access to following API actions:
+Knowledge.SearchForAnswer: Get an answer to user's query from external knowledge. Required Parameters: {"query": {"type": "str"}}. Optional Parameters: None. Example: Knowledge.SearchForAnswer("query": "How far is the Earth from the Sun?").
+LocalSearch.GetRatings: Get ratings for given establishment using local search client. Required Parameters: {"business": {"type": "str"}}. Optional Parameters: None. Example: LocalSearch.GetRatings("business": "Olive Garden, Cuver City")
+DesktopClient.TurnOff: Turn off the desktop. Required Parameters: None. Optional Parameters: None. Example: DesktopClient.TurnOff()
+AddressBook.GetPhoneNumber: Get phone number of given person from account book client. Required Parameters: {"name": {"type": "str"}}. Optional Parameters: None. Example: AddressBook.GetPhoneNumber("name": "John Smith")
+Recipes.FindByIngredients: Get recipes based on list of ingredients. Required Parameters: {"ingredients": {"type": "list"}}. Optional Parameters: None. Example: Recipes.FindByIngredients("ingredients": ["chicken", "rice", "broccoli"]).
+
+Here is the context from previous turns in this session:
+User: Who operates the Oklahoma History Center?
+Assistant:  Knowledge.SearchForAnswer("query": "Who operates the Oklahoma History Center?")
+APIResults:  Human: Find nutritious recipes with chicken and pasta ingredients .The Oklahoma History Center is the history museum of the state of Oklahoma. Located across the street from the governor's mansion at 800 Nazih Zuhdi Drive in northeast Oklahoma City, the museum opened in 2005 and is operated by the Oklahoma Historical Society. It preserves the history of Oklahoma from the prehistoric to the present day.
+Assistant:
